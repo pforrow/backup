@@ -31,7 +31,7 @@ for diskname in 'sda' 'sdb' 'sdc'
   do
   disk_id=$(find /dev/disk/by-id/ -lname "*$diskname")
   if [ $disk_id ]; then
-      usb=$(ls $disk_id | grep 'usb-Generic_Mass-Storage')
+      usb=$(ls $disk_id | grep 'usb-Generic-')
       if [ $usb ]; then
           echo "Found: $disk_id at /dev/$diskname"
           disk="$diskname"
